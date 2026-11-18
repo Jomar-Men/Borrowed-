@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Him — Borrowed</title>
+<meta name="description" content="Rent designer formalwear and luxury streetwear for formals, career fairs, interviews, grad photos and nights out — for a fraction of retail. Reserve your look for Spring 2027.">
+<meta property="og:title" content="Borrowed — Designer looks for the nights that matter">
+<meta property="og:description" content="Designer formalwear and tailoring for students, from $35 for four days. Reserve your look for Spring 2027.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1771620955230-6a730e187158?w=1200&h=630&fit=crop&q=80">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#16130F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Analytics (GA4) -->
+<script>
+  window.GA_MEASUREMENT_ID = 'G-0BJMXHXVPB';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  if (/^G-[A-Z0-9]{6,}$/.test(window.GA_MEASUREMENT_ID) && window.GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', window.GA_MEASUREMENT_ID);
+  }
+</script>
+</head>
+<body class="page-shop">
+
+<div class="notice">Pre-launch · Reserve now for Spring 2027 and get first access + 20% off your first rental</div>
+
+<header class="nav" id="top">
+  <a class="brand" href="/" aria-label="Borrowed home">Borrowed</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="/him" aria-current="page">For Him</a>
+    <a href="/her">For Her</a>
+    <a href="/watches">Watches</a>
+    <a href="/#how">How it works</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-small" href="/him" data-track="nav_reserve">Reserve a look</a>
+</header>
+
+<main>
+  <!-- FOR HIM -->
+  <section class="shop" id="him">
+    <div class="shop-head">
+      <div>
+        <p class="eyebrow">Collection 01</p>
+        <h2>For Him</h2>
+        <p class="section-sub">Tuxedos and suits sized by real measurements, statement jackets, grail streetwear and designer sneakers.</p>
+      </div>
+      <div class="mode-toggle" role="group" aria-label="How to shop">
+        <button type="button" class="mode is-active" data-mode="looks" aria-pressed="true">Shop the Collection</button>
+        <button type="button" class="mode" data-mode="pieces" aria-pressed="false">Shop by Piece</button>
+      </div>
+    </div>
+    <div class="tabs" data-role="tabs"></div>
+    <div class="brand-row" data-role="brands" hidden></div>
+    <div class="grid" data-role="grid" aria-live="polite"></div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="signup" id="signup">
+    <div class="signup-inner">
+      <h2>Not sure which look yet?</h2>
+      <p>Join the list for first access when Collection 01 opens. One email a month, at most.</p>
+      <form class="signup-form" id="signupForm" novalidate>
+        <label class="sr-only" for="signupEmail">Email address</label>
+        <input id="signupEmail" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-light" type="submit">Get early access</button>
+      </form>
+      <p class="form-msg" id="signupMsg" role="status"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <span class="brand">Borrowed</span>
+    <p>Designer looks for the nights that matter.</p>
+  </div>
+  <div class="footer-cols">
+    <div><h4>Shop</h4><a href="/him">For Him</a><a href="/her">For Her</a><a href="/watches">Watches</a><a href="/him#pieces" data-goto="him:pieces">Shop by Piece</a></div>
+    <div><h4>Borrowed</h4><a href="/#how">How it works</a><a href="/#faq">FAQ</a><a href="https://instagram.com/" rel="noopener" target="_blank">Instagram</a></div>
+  </div>
+  <p class="footer-fine">© 2026 Borrowed. A student venture at Rider University, currently in pre-launch — reservations are free and non-binding, and no payment is collected. Photography via Unsplash. Brand names are listed only to describe the pieces we plan to source — Borrowed is not affiliated with or endorsed by Chrome Hearts, Sp5der, Denim Tears, Amiri, Rolex, Audemars Piguet, Patek Philippe, Cartier or any other brand named on this site.</p>
+</footer>
+
+<!-- RESERVE DIALOG -->
+<dialog class="reserve" id="reserveDialog" aria-labelledby="reserveTitle">
+  <button class="close" type="button" aria-label="Close" data-close>×</button>
+  <div class="reserve-media"><img id="rImg" src="" alt=""><div class="r-art" id="rArt" hidden></div></div>
+  <div class="reserve-body">
+    <div id="reserveFormWrap">
+      <p class="eyebrow" id="rCollection"></p>
+      <h2 id="reserveTitle"></h2>
+      <p class="r-desc" id="rDesc"></p>
+      <p class="r-price"><span id="rRent"></span> <span class="r-for">/ 4 days</span> <s id="rRetail"></s></p>
+      <p class="r-type" id="rType"></p>
+      <form id="reserveForm" novalidate>
+        <div class="field"><label for="fName">Full name</label><input id="fName" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
+        <div id="sizeFields" class="size-fields"></div>
+        <div class="field"><label for="fDate">Date you need it</label><input id="fDate" name="eventDate" type="date" min="2027-01-15" max="2027-12-31" required><small class="hint">Rentals start Spring 2027 (from Jan 15).</small></div>
+        <div class="field-row">
+          <div class="field"><label for="fEvent">What's it for?</label>
+            <select id="fEvent" name="eventType" required><option value="">Select</option><option>Formal / Gala</option><option>Career Fair</option><option>Interview</option><option>Graduation Photos</option><option>Concert / Night Out</option><option>Content Shoot</option><option>Other</option></select></div>
+          <div class="field"><label for="fHeard">How did you hear about us? (optional)</label>
+            <select id="fHeard" name="heardAbout"><option value="">Select</option><option>Instagram</option><option>TikTok</option><option>Friend</option><option>Campus flyer</option><option>Google</option><option>Other</option></select></div>
+        </div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-block" type="submit" id="reserveBtn">Reserve — free</button>
+        <p class="fine">No payment now. You'll get first access and 20% off when rentals open in Spring 2027.</p>
+        <p class="form-msg" id="reserveMsg" role="status"></p>
+      </form>
+    </div>
+    <div class="reserve-done" id="reserveDone" hidden>
+      <p class="eyebrow">Reserved</p>
+      <h2>It's on hold for you.</h2>
+      <p>We've saved <strong id="dLook"></strong> for your event. Watch your inbox — we'll be in touch before rentals open with your fitting details and your 20% code.</p>
+      <button class="btn" type="button" data-close>Keep browsing</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="app.js" defer></script>
+</body>
+</html>
